@@ -1,7 +1,7 @@
 #Client code
 from socket import *
 
-serverip = '142.55.210.125' #Use your server IP address here
+serverip = '' #****Use your server IP address here****
 serverport = 5555 #Use last 4 digits of your ID
 datasize = 1024 #Note the double parenthesis (why?)
 
