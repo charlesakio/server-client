@@ -1,4 +1,4 @@
 server-client
 =============
 
-Python Scripts that enable to host to chat with each other
+Python Scripts that enable two host to chat with each other.
