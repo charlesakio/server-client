@@ -1,4 +1,6 @@
 server-client
 =============
 
-Python Scripts that enable two host to chat with each other.
+Python Scripts that enable the client to take a file from the server.
+
+Can be edited to use for chatting.
