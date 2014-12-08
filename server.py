@@ -1,6 +1,6 @@
 from socket import *
 
-host = '' #****Server IP address****
+host = '142.55.107.217' #Server IP address
 
 port = 5555 #This port will be bound in server
 backlog = 5 #The backlog is the maximum number of queued connections
@@ -19,10 +19,17 @@ while not servercloseflag:
  			'on port: ',
 			clientaddress[1])
  	recdata = clientsock.recv(size) #Receieved data of byte type
- 
+ 	
+ 	file_name = recdata.decode()
+ 	file_data = ""
+ 	files = open(file_name)
+ 	for line in files:
+ 		file_data = file_data + (line) + '\n'
+
+
  	while recdata:
  		print('Received data from ', clientaddress[0], ': ',recdata.decode())
- 		clientsock.send(recdata) #echo back (test only)
+ 		clientsock.send(file_data.encode()) #echo back (test only)
  		recdata= clientsock.recv(size)
  
  		if recdata.decode() == 'end' or recdata.decode() == 'quit': #close client first
@@ -36,3 +43,4 @@ while not servercloseflag:
 print('Closing server:')
 listensock.close()
 print('Bye...')
+
